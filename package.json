@@ -1,0 +1,23 @@
+{
+  "name": "SleepBoat",
+  "version": "1.0.0",
+  "description": "discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "SleepBoat"
+  },
+  "author": "ThndrboltII",
+  "license": "ISC",
+  "dependencies": {
+    "dblapi.js": "^2.3.0",
+    "discord.js": "^11.5.1",
+    "ffmpeg-binaries": "^4.0.0",
+    "jquery.js": "0.0.2-security",
+    "opusscript": "0.0.6",
+    "ytdl-core": "^0.29.2"
+  }
+}
