@@ -13,7 +13,7 @@ class PingPongCommand extends commando.Command {
 
     async run(message, args) {
         console.log('Running PingPongCommand...')
-        message.reply("PONG MUDAFUKA!")
+        message.reply("PONG MODAFUKA!")
         console.log('Done.')
     }
 }
