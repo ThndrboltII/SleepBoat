@@ -1,13 +1,3 @@
-const io = require('@pm2/io')
-
-io.init({
-  metrics: {
-    network: {
-      ports: true
-    }
-  }
-})
-
 const commando = require('discord.js-commando');
 //const TOKEN = require('./config.json');
 
@@ -18,7 +8,7 @@ const bot =  new commando.Client({
 });
 
 const DBL = require('dblapi.js');
-const dbl = new DBL(process.env.token);
+const dbl = new DBL(process.env.BOT_TOKEN, bot);
 
 bot.registry.registerGroup("audio", "Audio");
 bot.registry.registerGroup("text", "Text");
@@ -31,7 +21,7 @@ global.servers = {};
 bot.on('disconnect', () => {
     console.log('Disconnected')
     signedIntoDiscord = false;
-    bot.login(process.env.token).then(function(){
+    bot.login(process.env.BOT_TOKEN).then(function(){
         console.log('Reconnected')
         signedIntoDiscord = true;
     });  
@@ -49,4 +39,4 @@ bot.on('resume', () => {
     console.log('Resume')
 })
 
-bot.login(process.env.token);
+bot.login(process.env.BOT_TOKEN);
