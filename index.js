@@ -9,7 +9,7 @@ io.init({
 })
 
 const commando = require('discord.js-commando');
-const TOKEN = require('./config.json');
+//const TOKEN = require('./config.json');
 
 const bot =  new commando.Client({
     owner: '326004207473655819',
