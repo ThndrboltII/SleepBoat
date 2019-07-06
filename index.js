@@ -7,8 +7,8 @@ const bot =  new commando.Client({
     commandPrefix: '&'
 });
 
-const DBL = require('dblapi.js');
-const dbl = new DBL(process.env.BOT_TOKEN, bot);
+/*const DBL = require('dblapi.js');
+const dbl = new DBL(process.env.BOT_TOKEN, bot);*/
 
 bot.registry.registerGroup("audio", "Audio");
 bot.registry.registerGroup("text", "Text");
@@ -25,18 +25,18 @@ bot.on('disconnect', () => {
         console.log('Reconnected')
         signedIntoDiscord = true;
     });  
-})
+});
 
 bot.on('reconnecting', () => {
     console.log('Reconnecting')
-})
+});
 
 bot.on('ready', () => {
     console.log('Ready')
-})
+});
 
 bot.on('resume', () => {
     console.log('Resume')
-})
+});
 
 bot.login(process.env.BOT_TOKEN);
