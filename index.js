@@ -1,5 +1,5 @@
 const commando = require('discord.js-commando');
-//const TOKEN = require('./config.json');
+const TOKEN = process.env.BOT_TOKEN;
 
 const bot =  new commando.Client({
     owner: '326004207473655819',
@@ -21,7 +21,7 @@ global.servers = {};
 bot.on('disconnect', () => {
     console.log('Disconnected')
     signedIntoDiscord = false;
-    bot.login(process.env.BOT_TOKEN).then(function(){
+    bot.login(TOKEN).then(function(){
         console.log('Reconnected')
         signedIntoDiscord = true;
     });  
@@ -39,4 +39,4 @@ bot.on('resume', () => {
     console.log('Resume')
 });
 
-bot.login(process.env.BOT_TOKEN);
+bot.login(TOKEN);
