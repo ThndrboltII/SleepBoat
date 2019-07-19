@@ -1,5 +1,5 @@
 const commando = require('discord.js-commando');
-const TOKEN = process.env.BOT_TOKEN;
+const TOKEN = process.env.token;
 
 const bot =  new commando.Client({
     owner: '326004207473655819',
