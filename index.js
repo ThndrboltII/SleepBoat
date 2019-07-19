@@ -1,11 +1,11 @@
 const commando = require('discord.js-commando');
-const TOKEN = "NDk1MzE5OTU0MDk1MDc5NDI1.XTGTaA.dOZBeBeBPZXASwYOKzM-kuMdP8Q";
-
 const bot =  new commando.Client({
     owner: '326004207473655819',
     unknownCommandResponse: false,
     commandPrefix: '&'
 });
+
+const TOKEN = process.env.token;
 
 /*const DBL = require('dblapi.js');
 const dbl = new DBL(process.env.BOT_TOKEN, bot);*/
