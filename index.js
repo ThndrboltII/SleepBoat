@@ -7,9 +7,10 @@ const bot = new commando.Client({
 });
 require("dotenv").config();
 const token = process.env.NODE_ENV;
-//const config = require("./config.json");
-//const SQLite = require("better-sqlite3");
-//const sql = new SQLite("./scores.sqlite");
+const config = require("./config.json");
+const SQLite = require("better-sqlite3");
+const sql = new SQLite("./scores.sqlite");
+console.log(config.token);
 
 /*const DBL = require('dblapi.js');
 const dbl = new DBL(process.env.BOT_TOKEN, bot);*/
@@ -21,8 +22,6 @@ bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + "/commands");
 
 global.servers = {};
-
-bot.login(token);
 
 /*bot.on("ready", () => {
     // Check if the table "points" exists.
@@ -116,7 +115,7 @@ bot.on("message", message => {
 bot.on("disconnect", () => {
   console.log("Disconnected");
   signedIntoDiscord = false;
-  bot.login(token).then(function() {
+  bot.login(config.token).then(function() {
     console.log("Reconnected");
     signedIntoDiscord = true;
   });
@@ -130,7 +129,9 @@ bot.on("ready", () => {
   //TODO production environment : `npm run production` --> process.env.NODE_ENV === `production`
   //TODO development environment : `npm run development` --> process.env.NODE_ENV === `development`
   if (token === "production") {
-    bot.user.setActivity("chill sounds", { type: "PLAYING" });
+    bot.user.setActivity("STREAMING", {
+      type: "CHILLING"
+    });
   } else {
     bot.user.setActivity("in code land", { type: "PLAYING" });
   }
@@ -141,4 +142,4 @@ bot.on("resume", () => {
   console.log("Resume");
 });
 
-bot.login(token);
+bot.login(config.token);
