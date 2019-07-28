@@ -22,6 +22,8 @@ bot.registry.registerCommandsIn(__dirname + "/commands");
 
 global.servers = {};
 
+bot.login(token);
+
 /*bot.on("ready", () => {
     // Check if the table "points" exists.
     const table = sql.prepare("SELECT count(*) FROM sqlite_master WHERE type='table' AND name = 'scores';").get();
