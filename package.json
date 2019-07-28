@@ -4,7 +4,10 @@
   "description": "discord bot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "production": "set NODE_ENV=production&&npm start",
+    "development": "set NODE_ENV=development&&npm start"
   },
   "repository": {
     "type": "git",
@@ -13,12 +16,19 @@
   "author": "ThndrboltII",
   "license": "ISC",
   "dependencies": {
-    "@pm2/io": "^4.2.4",
+    "@discordjs/uws": "^10.149.0",
+    "better-sqlite3": "^5.4.1",
+    "bufferutil": "^4.0.0",
     "dblapi.js": "^2.3.0",
     "discord.js": "^11.5.1",
     "discord.js-commando": "^0.10.0",
+    "dotenv": "^8.0.0",
+    "erlpack": "github:discordapp/erlpack",
     "ffmpeg-binaries": "^4.0.0",
     "jquery.js": "0.0.2-security",
+    "libsodium-wrappers": "^0.7.3",
+    "node-gyp": "^5.0.3",
+    "node-opus": "^0.2.7",
     "opusscript": "0.0.6",
     "ytdl-core": "^0.29.2"
   }
