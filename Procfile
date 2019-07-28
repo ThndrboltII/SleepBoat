@@ -1,1 +1,1 @@
-web: start index.js
+worker: npm run production

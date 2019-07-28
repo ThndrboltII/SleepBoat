@@ -7,9 +7,9 @@ const bot = new commando.Client({
 });
 require("dotenv").config();
 const token = process.env.NODE_ENV;
-const config = require("./config.json");
-const SQLite = require("better-sqlite3");
-const sql = new SQLite("./scores.sqlite");
+//const config = require("./config.json");
+//const SQLite = require("better-sqlite3");
+//const sql = new SQLite("./scores.sqlite");
 
 /*const DBL = require('dblapi.js');
 const dbl = new DBL(process.env.BOT_TOKEN, bot);*/
@@ -130,9 +130,7 @@ bot.on("ready", () => {
   //TODO production environment : `npm run production` --> process.env.NODE_ENV === `production`
   //TODO development environment : `npm run development` --> process.env.NODE_ENV === `development`
   if (token === "production") {
-    bot.user.setActivity("Chill Sounds", {
-      type: "STREAMING"
-    });
+    bot.user.setActivity("chill sounds", { type: "PLAYING" });
   } else {
     bot.user.setActivity("in code land", { type: "PLAYING" });
   }
